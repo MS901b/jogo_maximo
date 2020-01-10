@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurso>
+    <titulo>Explorando o Jogo do Máximo</titulo>
+    <descricao>Esta Unidade explora noções básicas do cálculo de probabilidades, tais como eventos e independência. O experimento aleatório considerado baseia-se no máximo obtido no lançamento de dois dados comuns.</descricao>
+    <estado>Finalizado</estado>
+	<imagem>maximo.jpg</imagem>
+	<tipo>Animação e Simulação</tipo>
+	<objetivos>Investigar, primeiramente através de uma abordagem frequentista e depois através do cálculo das probabilidades teóricas, um jogo no qual os participantes apostam na maior face obtida no lançamento de dois dados comuns.</objetivos>
+	<observacoes>É necessário plugin Flash 9.0 ou mais recente e máquina Java 1.6 ou mais recente.</observacoes>
+	<nivel>Ensino Médio</nivel>
+	<componente>Matemática</componente>
+	<temas>Análise de Dados e Probabilidade</temas>
+	<autores>Laura Letícia Ramos Rifo, Leonardo Barichello</autores>
+	<palavras_chaves>Laura Letícia Ramos Rifo, Leonardo Barichello</palavras_chaves>
+	<assunto>Unicamp, Projeto M³, software educacional, matemática, jogo, jogo do máximo, probabilidade, dados, eventos, independência, experimento aleatório</assunto>
+</recurso>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/funcoes_estilizadas.js"></script>
+		<title>Explorando o Jogo do Máximo</title>
+		<script type="text/javascript">
+			var Perguntas = $H({
+				limpar: {
+					conteudo: '<p>Isso irá apagar todos os dados armazenados, como respostas guardadas, para essa unidade.</p><p style="margin-top:10px;">Você tem certeza?</p>',
+					layout: ['seta_cima','direita'],
+					largura: 10,
+					callback: resetar,
+					// se o usuário clicar em 'Sim', o popup chamará a funcao funcao_pede na qual this.resultado será 'sim'
+					// Veja que essa função deve estar definida, ou ser definida nesse exato momento (como no exemplo "pede2")
+					respostas: [{sim: 'Sim'}, {nao: 'Não'}]
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<h1>Jogo do Máximo</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Mapa de Atividades</h2>
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<span>Mapa</span>
+					<a href="introducao.html">Introdução</a>
+					<a href="index.html">Início</a>
+				</div>
+				
+				<br class="limpador" />
+			</div>
+			
+			<div id="abertura">
+				<div id="conteudo">
+					<a id="limpar" style="position:absolute; right:20px; top: 20px; color:RGB(210,25,42); font-weight:bold; ">Limpar dados</a>
+					<embed height="480" id="Mapinha" align="middle" width="960" type="application/x-shockwave-flash" wmode="transparent" salign="" allowscriptaccess="sameDomain" allowfullscreen="false" menu="false" name="Mapinha" bgcolor="#ffffff" devicefont="false" wmode="window" scale="showall" loop="true" play="true" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="applets/Mapinha.swf"/>
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a target="_blank" href="http://m3.mat.br/">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+
+	</body>
+</html>

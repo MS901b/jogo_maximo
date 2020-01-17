@@ -3,9 +3,10 @@
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet'>
 
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
@@ -17,11 +18,11 @@
 
 		<script type="text/javascript" src="scripts/maximo_funcoes.js"></script>
 		<script type="text/javascript">
-		
+
 		var nomeSoft="maximo";
 
 
-		
+
 			var FichaUnidade = new Array(
 				{
 					titulo: 'Autor',
@@ -51,7 +52,7 @@
 					titulo: 'Fotografia',
 					texto: 'Augusto Fidalgo'
 				}
-				
+
 				);
 
 		var FichaProjeto = new Array(
@@ -101,7 +102,7 @@
 					texto: 'Heloísa V. Rocha'
 				}
 			);
-			
+
 			var Links = $H({
 			});
 
@@ -115,15 +116,15 @@
 						}
 					});
 		</script>
-		
+
 		<title>Explorando Jogo do Máximo</title>
 	</head>
 	<body>
-		
-		
+
+
 		<div id="container" class="margem_topo">
-			
-			
+
+
 			<div id="abertura">
 				<div id="conteudo">
 					<!-- SalvaLocal -->
@@ -133,7 +134,7 @@
 							   <param name="movie" value="applets/SalvaLocal.swf" />
 							</object>
 						</div>
-					<h1>Explorando o Jogo do Máximo</h1>
+					<h1>Explorando o Jogo do Máximo<i>v2.0</i></h1>
 					<div id="apresentacao">
 						<div id="imagem_apresentacao">
 							<img src="imgs/dados_apresentacao.jpg" />
@@ -143,8 +144,8 @@
 								</p>
 							</div>
 						</div>
-							
-						
+
+
 						<div class="a_direita">
 							<div class="a_esquerda apontador">
 								<a href="introducao.html">Iniciar software</a>
@@ -167,14 +168,15 @@
 						</div>
 						<br class="limpador" />
 					</div>
-					
+
 					<br class="limpador" />
-					
+
 					<div id="fichas">
 						<a href="javascript:;" onclick="return false;" id="ficha_tecnica_unidade">Ficha técnica da unidade</a>
 						<span> / </span>
 						<a href="javascript:;" onclick="return false;" id="ficha_tecnica_projeto">Ficha técnica do projeto</a>
-						
+						<a href="detect.html" style="float:right;" id="ficha_tecnica_projeto">Ver relatório de compatibilidade</a>
+
 						<br class="limpador" />
 					</div>
 
@@ -182,11 +184,10 @@
 			</div>
 			<br class="limpador" />
 			<div id="rodape">
-				<a id="licenca">Licença</a>&nbsp;<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+				<a id="licenca">Licença</a>&nbsp;<a target="blank"; href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
 
 	</body>
-	
-</html>
 
+</html>

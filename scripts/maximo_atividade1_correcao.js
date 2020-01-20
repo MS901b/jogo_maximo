@@ -1,4 +1,4 @@
-var flag_flash = false;
+var flag_flash = true;
 var flag_doc = false;
 
 

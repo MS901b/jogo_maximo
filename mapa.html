@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/funcoes_estilizadas.js"></script>
+		<script type="text/javascript" src="scripts/mapinha.js"></script>
 		<title>Explorando o Jogo do Máximo</title>
 		<script type="text/javascript">
 
@@ -48,7 +49,6 @@
 			<div id="abertura">
 				<div id="conteudo">
 					<a id="limpar" style="position:absolute; right:20px; top: 20px; color:RGB(210,25,42); font-weight:bold; ">Limpar dados</a>
-					<embed height="480" id="Mapinha" align="middle" width="960" type="application/x-shockwave-flash" wmode="transparent" salign="" allowscriptaccess="sameDomain" allowfullscreen="false" menu="false" name="Mapinha" bgcolor="#ffffff" devicefont="false" wmode="window" scale="showall" loop="true" play="true" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="applets/Mapinha.swf"/>
 				</div>
 			</div>
 			<br class="limpador" />
@@ -58,4 +58,19 @@
 		</div>
 
 	</body>
+
+	<script>
+	fetch("scripts/estrutura.xml")
+			.then(function(response){
+			response.text().then(function(data){
+				const m = new Mapinha("conteudo","Jogo Maximo");
+				m.parseXml(data);
+				m.adicionaBotoesItens();
+				});
+			})
+			.catch(function(err){
+			console.error('Failed retrieving information', err);
+			});
+	</script>
+
 </html>

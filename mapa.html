@@ -7,22 +7,27 @@
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/funcoes_estilizadas.js"></script>
 		<title>Explorando o Jogo do Máximo</title>
 		<script type="text/javascript">
+
 			var Perguntas = $H({
 				limpar: {
 					conteudo: '<p>Isso irá apagar todos os dados armazenados, como respostas guardadas, para essa unidade.</p><p style="margin-top:10px;">Você tem certeza?</p>',
 					layout: ['seta_cima','direita'],
 					largura: 10,
-					callback: resetar,
+					callback: function () {
+						$('SalvaLocal').ApagaTudo(nomeSoft)
+					},
 					// se o usuário clicar em 'Sim', o popup chamará a funcao funcao_pede na qual this.resultado será 'sim'
 					// Veja que essa função deve estar definida, ou ser definida nesse exato momento (como no exemplo "pede2")
 					respostas: [{sim: 'Sim'}, {nao: 'Não'}]
 				}
 			});
 		</script>
+
 	</head>
 	<body>
 		<div id="container">

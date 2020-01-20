@@ -17,8 +17,7 @@ var IdPadrao = [['parte/parte','q/questao','/itemletra','/subitem'],'_'];
 	
 	ATENÇÃO: Cada tipo possui um formato de entrada característico.
 */
-var Partes = null;
-var nomeSoft = 'maximo';
+var Partes = null
 var Questoes = null;
 
 /*

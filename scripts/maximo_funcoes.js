@@ -141,7 +141,7 @@ function fazJogadas(nJogadas,desafio){
 			}
 		}
 	
-		// Pega o valor máximos dos que foram selecionados para os Dados
+		// Pega o valor mï¿½ximos dos que foram selecionados para os Dados
 		var maximo=Math.max.apply(Math, dadosNumeros);
 	
 		// Decide quem foi o ganhador desse jogo
@@ -162,7 +162,7 @@ function fazJogadas(nJogadas,desafio){
 		num_temp++;
 	  	applet.evalCommand("n"+maximo+" = "+String(num_temp));  
 		
-		// Chama addRow de acordo com quantos dados estão sendo usados (para parte2) 
+		// Chama addRow de acordo com quantos dados estï¿½o sendo usados (para parte2) 
 		// * Melhorar essa chamada
 		switch(nDados)
 			{
@@ -190,7 +190,7 @@ function fazJogadas(nJogadas,desafio){
 function ApagarJogadas(){
 
 	// Apaga, linha por linha, a tabela.
-	// Uma solução mais simples substituindo innerHtml da tabela é possivel no Firefox. Mas não funciona no IE.
+	// Uma soluï¿½ï¿½o mais simples substituindo innerHtml da tabela ï¿½ possivel no Firefox. Mas nï¿½o funciona no IE.
 	var tbody = document.getElementById("tabelaDados").getElementsByTagName("TBODY")[0];
 	for (var i=tbody.rows.length-1; i>=0; i--) {
 		tbody.deleteRow(i);
@@ -216,27 +216,19 @@ function rollDice(){
 	return (Math.ceil(Math.random()*6));
 }
 
-
-
-function getFlashMovie(movieName) {
-  var isIE = navigator.appName.indexOf("Microsoft") != -1;
-  return (isIE) ? window[movieName] : document[movieName];
- 
- }
-
   function getResp(id)
  {
-	return ( getFlashMovie('SalvaLocal').Pega(nomeSoft,id)=='undefined' ? '' : getFlashMovie('SalvaLocal').Pega(nomeSoft,id));
+	return ( $('SalvaLocal').Pega(nomeSoft,id)=='undefined' ? '' : $('SalvaLocal').Pega(nomeSoft,id));
  }
  
   function setResp(id,valor)
  {
- 	getFlashMovie('SalvaLocal').Salva(nomeSoft,id,valor);
+ 	$('SalvaLocal').Salva(nomeSoft,id,valor);
  }
 
    function apagaTodasResp()
  {
- 	return (getFlashMovie('SalvaLocal').ApagaTudo(nomeSoft));
+ 	return ($('SalvaLocal').ApagaTudo(nomeSoft));
  }
  
  function geraOcorrencias() {
@@ -285,11 +277,11 @@ function jogarTabela(){
 	$( "botaoZerarTabela" ).trava();
 
 	
-	// Mostra a animação da dado rodando (dice0.gif)
+	// Mostra a animaï¿½ï¿½o da dado rodando (dice0.gif)
 	$( "dado1" ).setAttribute( 'src', 'imgs/dice0.gif'); 
 	$( "dado2" ).setAttribute( 'src', 'imgs/dice0.gif');
 
-	// Carrega valores aleatórios nos dados.
+	// Carrega valores aleatï¿½rios nos dados.
 	valoresDados[0]=rollDice();
 	valoresDados[1]=rollDice();
 	
@@ -297,16 +289,16 @@ function jogarTabela(){
 	timeout1=Math.ceil(Math.random()*8)+4;
 	timeout2=Math.ceil(Math.random()*8)+4;
 	
-	// Baseado nos valores de timeout, chama as funções que irão mostrar o valor dos dados. 
+	// Baseado nos valores de timeout, chama as funï¿½ï¿½es que irï¿½o mostrar o valor dos dados. 
 	// Cria uma chamada com o valor maximo desses timeout para finalizar a jogada e mostrar o vencedor ao jogador.
 	setTimeout('showDado("dado1",0)',timeout1*150);
 	setTimeout('showDado("dado2",1)',timeout2*150);
 	setTimeout('fimJogadaTabela()',Math.max(timeout1,timeout2)*150);
 }
 
-// Funcao chamada ao terminar a jogada chamada na página de Introdução
+// Funcao chamada ao terminar a jogada chamada na pï¿½gina de Introduï¿½ï¿½o
 function fimJogadaTabela(){
-	// Habilita o botão de jogar
+	// Habilita o botï¿½o de jogar
 	$( "botaoJogar" ).destrava();
 	$( "botaoApagarSelecao" ).destrava();
 	$( "botaoZerarTabela" ).destrava();
@@ -323,7 +315,7 @@ function showDado(idImg,numDado) {
 function selecionaLinhaColTabela (linha, coluna) {
 		$('seta_linha').setStyle({top: offsetLinha+28*(linha-1)+'px', display: 'block' });
 		
-		var deltasColunas = [35,34,35,34,34]; // colocado dessa forma até estabilizar o layout
+		var deltasColunas = [35,34,35,34,34]; // colocado dessa forma atï¿½ estabilizar o layout
 		var deltaColuna = 0;
 		for (var i=0;i<coluna-1;i++) {
 			deltaColuna += deltasColunas[i];

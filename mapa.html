@@ -57,20 +57,20 @@
 			</div>
 		</div>
 
-	</body>
-
-	<script>
-	fetch("scripts/estrutura.xml")
-			.then(function(response){
-			response.text().then(function(data){
-				const m = new Mapinha("conteudo","maximo");
-				m.parseXml(data);
-				m.adicionaBotoesItens();
+		<script>
+		fetch("scripts/estrutura.xml")
+				.then(function(response){
+				response.text().then(function(data){
+					const m = new Mapinha("conteudo",nomeSoft);
+					m.parseXml(data);
+					m.adicionaBotoesItens();
+					});
+				})
+				.catch(function(err){
+				console.error('Failed retrieving information', err);
 				});
-			})
-			.catch(function(err){
-			console.error('Failed retrieving information', err);
-			});
-	</script>
+		</script>
+
+	</body>
 
 </html>

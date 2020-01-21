@@ -63,7 +63,7 @@
 	fetch("scripts/estrutura.xml")
 			.then(function(response){
 			response.text().then(function(data){
-				const m = new Mapinha("conteudo",nomeSoft);
+				const m = new Mapinha("conteudo","maximo");
 				m.parseXml(data);
 				m.adicionaBotoesItens();
 				});

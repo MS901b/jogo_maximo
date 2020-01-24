@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<script type="text/javascript" src="scripts/mapinha.js"></script>
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
 		<script type="text/javascript" src="../scripts/salvaLocal.js"></script>
@@ -52,6 +53,20 @@
 				<a target="_blank" href="http://m3.ime.unicamp.br/">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
+
+		<script>
+			fetch("scripts/estrutura.xml")
+				.then(function(response){
+				response.text().then(function(data){
+					const m = new Mapinha("conteudo","maximo");
+					m.parseXml(data);
+					m.adicionaBotoesItens();
+					});
+				})
+			.catch(function(err){
+			console.error('Failed retrieving information', err);
+			});
+		</script>
 
 	</body>
 </html>

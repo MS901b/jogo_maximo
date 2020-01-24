@@ -2,14 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
 		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
-		
-		<meta name=viewport content="width=device-width,initial-scale=1">  
-        <script src="https://www.geogebra.org/apps/deployggb.js"></script> 
-		
+
+		<meta name=viewport content="width=device-width,initial-scale=1">
+        <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
@@ -17,10 +17,10 @@
 		<!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>	
+		<!--[if lte IE 6]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
-		
+
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
@@ -29,39 +29,39 @@
 		<script type="text/javascript" src="scripts/funcoes_estilizadas.js"></script>
 		<script type="text/javascript" src="scripts/calculadora.js"></script>
 		<script type="text/javascript" src="scripts/rolagem.js"></script>
-		
-		
+
+
 		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
 		<script type="text/javascript" src="scripts/interface.js"></script>
 		<script type="text/javascript" src="scripts/referencias.js"></script>
 		<script type="text/javascript" src="scripts/curiosidades.js"></script>
-		
+
 		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
 		<!-- O arquivo inputs.js deve ser incluído por último -->
 		<script type="text/javascript" src="scripts/maximo_atividade1_correcao.js"></script>
 		<script type="text/javascript" src="scripts/maximo_atividade1_conteudo.js"></script>
 		<script type="text/javascript" src="scripts/maximo_funcoes.js"></script>
-		
+
 		<script type="text/javascript" src="scripts/inputs.js"></script>
-		
+
 		<script type="text/javascript">
 
 			var PosicaoAtual = {Atividade: 1, Parte: 0};
 			var ProximaParte = 'atividade1_parte2.html';
-			
+
 			/*
-				
+
 				Popups, Links e Perguntas:
-				
+
 				Sempre devem ser usados em links <a> com um ID definido ("link_continuar" ou "paus", nesse exemplo, ou ainda "pede" e "pede2");
 				Veja que não é necessário criar o parâmetro href, nem onclick, ou onmouseover, nada!
 				Ambos criam um popup que abre com click, porem os listados em Link são tratados pondo cor azul e sublinhado tracejado automaticamente;
 				Para itens que não precisam de sublinhar (como img_layout, por exemplo) é melhor usar a lista Popup;
 				Para itens que precisam de uma interação com o usuário, use as Perguntas;
-				
+
 			*/
 			var Perguntas = $H({
-            });				
+            });
 			var Popups = $H({
 				link_continuar: {
 					conteudo: 'Para prosseguir, você deve responder corretamente todas as repostas.',
@@ -69,12 +69,12 @@
 					largura: 11
 				}
 			});
-				
+
 			var Links = $H({
 			});
-				
+
 		</script>
-		
+
 
 		<style type="text/css">
 		<!--
@@ -94,8 +94,8 @@
 		}
 		-->
 		</style>
-		
-		
+
+
 		<title>Explorando o Jogo do Máximo</title>
 	</head>
 	<body onunload="">
@@ -119,13 +119,13 @@
 					<a href="introducao.html">Introdução</a>
 					<a href="index.html">Início</a>
 				</div>
-				
+
 				<div class="limpador"></div>
 			</div>
 			<!-- Por enquanto o controle de partes trancadas não será implementado-->
 			<ul id="partes">
 			</ul>
-			
+
 			<div id="software">
 				<div id="conteudo">
 					<!-- SalvaLocal -->
@@ -134,32 +134,32 @@
 						<param name="menu" value="false" />
 						<param name="movie" value="applets/SalvaLocal.swf" />
 						</object>
-					</div>					
-				
+					</div>
+
 					<div class="texto_solto">
 						<p>O simulador ao lado permite realizar jogadas como se fossem dados reais. Os números obtidos nas simulações serão registrados na forma de tabelas e de gráficos, situados ao lado do simulador. </p>
 					</div>
-				
+
 					<div class="caixa instrucoes">
 						<h2>Instruções</h2>
 						<p>Ao clicar no botão "Fazer 1 jogada", você lançará os dois dados de uma vez. Clicando no botão "Fazer 10 jogadas", os dados serão lançados dez vezes. Para apagar os registros das jogadas simuladas e começar tudo novamente, bastar clicar no botão "Zerar registros".</p>
 						<p>Para se habituar a essa ferramenta, faça algumas jogadas e observe que os resultados aparecerão registrados na tabela e nos gráficos ao lado.</p>
 						<p>Quando sentir que já entendeu como tudo funciona, apague os registros e passe para as questões a seguir.</p>
 					</div>
-					
+
 					<div id="questoes">
-					
+
 						<div id="texto_generico">
 							<!--
-							
+
 							-->
 						</div>
-						
-						
+
+
 						<div id="parte1_q1"></div>
 						<div id="parte1_q2"></div>
-					
-						
+
+
 						<a href="javascript:;" id="corrigir_tudo">Corrigir todas as questões</a>
 						<a id="link_continuar">
 							<span class="escondido">Continuar</span>
@@ -170,7 +170,7 @@
 			</div>
 			<br class="limpador" />
 			<div id="rodape">
-				<a target="_blank" href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+				<a target="_blank" href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
 		<div id="applet">
@@ -178,15 +178,15 @@
 				<!--
 					De acordo com a W3C as tags <applet> e <embed> estão depreciadas e não devem ser utilizadas em arquivos XHTML
 					e, no lugar, deve ser usada a tag <object>
-					
+
 					No caso do flash, funcionando em todos os browsers:
-					
+
 						<object id="Urna" name="Urna" type="application/x-shockwave-flash" data="applets/SemReposicao.swf" width="520" height="400">
 							<param name="menu" value="false" />
 							<param name="movie" value="applets/SemReposicao.swf" />
 						</object>
-					
-					No caso do Java, não dá pra pôr aqui comentado em HTML pois usa comentário condicional, 
+
+					No caso do Java, não dá pra pôr aqui comentado em HTML pois usa comentário condicional,
 					mas está no arquivo java_applet.html
 				-->
 				<div class="canto sup_esq"></div>
@@ -194,7 +194,7 @@
 				<div class="canto inf_esq"></div>
 				<div class="canto inf_dir"></div>
 			<div style="float:left;">
-				<div id="listaJogadas" style="overflow:scroll; height: 330px; width=282px"> 
+				<div id="listaJogadas" style="overflow:scroll; height: 330px; width=282px">
 					<table border="0">
 						<tr>
 							<td valign="top">
@@ -211,20 +211,20 @@
 									</TBODY>
 								</table>
 							</td>
-							
+
 						</tr>
 					</table>
 				</div>
 				<br>
 				<p><strong>Total Jogadas:</strong> <span id="nTotalJogadas"><strong>0</strong></span>
-				
+
 			</div>
 			<div style="float:right;">
-				
-				<div id="ggbApplet"></div> 
-                <script>  
-                    var ggbApp = new GGBApplet({"appName": "classic", 
-                    "width": 230, "height": 380, 
+
+				<div id="ggbApplet"></div>
+                <script>
+                    var ggbApp = new GGBApplet({"appName": "classic",
+                    "width": 230, "height": 380,
                     "filename": "applets/3dados.ggb",
                     "showResetIcon": false,
                     "enableRightClick": false,
@@ -233,13 +233,13 @@
                     "showToolBarHelp": false,
                     "showAlgebraInput": false,
                     "enableShiftDragZoom": false,
-                    "useBrowserForJS": true                
+                    "useBrowserForJS": true
                     }, true);
-                    window.addEventListener("load", function() { 
+                    window.addEventListener("load", function() {
                     ggbApp.inject('ggbApplet');
                     });
                 </script>
-                
+
 			</div>
 
 			<div id="associacao"></div>
@@ -251,15 +251,15 @@
 			</div>
 		</div>
 
-		
+
 		<div id="associado"></div>
-			
-		
+
+
 		<div id="ferramentas">
 			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
 			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
-			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
-			<a href="javascript:setActiveStyleSheet('grande');" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+			<!-- <a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:setActiveStyleSheet('grande');" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a> -->
 		</div>
 		<div id="calc" class="escondido"></div>
 	</body>

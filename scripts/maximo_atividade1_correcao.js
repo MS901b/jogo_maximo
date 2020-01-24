@@ -1,4 +1,4 @@
-var flag_flash = false;
+var flag_flash = true;
 var flag_doc = false;
 
 
@@ -15,7 +15,7 @@ Event.observe(window, 'load', function(){
 
 function init_load()
 {
-					
+
 	if ( (flag_flash) && (flag_doc) )
 	{
 		setAtividade('atividade_1',2,false);
@@ -35,7 +35,7 @@ function init_load()
 				validacaoRespostaNumericaSimples('parte1_q1_a',0);
 				setResp('atividade1_parte1_q1_a',$('parte1_q1_a').value);
 			});
-			
+
 			Event.observe('parte1_q2_a', 'change', function(evento){
 				validacaoRespostaNumericaSimples('parte1_q2_a',0);
 				setResp('atividade1_parte1_q2_a',$('parte1_q2_a').value);
@@ -56,18 +56,18 @@ function init_load()
 				setResp('atividade1_parte1_q2_d',$('parte1_q2_d').value);
 			});
 
-			
+
 			Event.observe('parte1_q2_e_1', 'change', function(evento){
 				setResp('atividade1_parte1_q2_e',$('parte1_q2_e_1').value);
 			});
-			
+
 			Event.observe('parte1_q2_e_2', 'change', function(evento){
 				setResp('atividade1_parte1_q2_e',$('parte1_q2_e_2').value);
-				
+
 			});
 			Event.observe('parte1_q2_e_3', 'change', function(evento){
 				setResp('atividade1_parte1_q2_e',$('parte1_q2_e_3').value);
-				
+
 			});
 
 			Event.observe('jogadaIndividutalButton', 'click', function(evento){
@@ -82,8 +82,8 @@ function init_load()
 			Event.observe('zerarJogadasButton', 'click', function(evento){
 				ApagarJogadas();
 			});
-			
-			
+
+
 			break;
 		case 1:
 			//Carrega valores iniciais
@@ -97,7 +97,7 @@ function init_load()
 				validacaoRespostaNumerica('parte2_q3_a',2);
 				setResp('atividade1_parte2_q3_a',$('parte2_q3_a').value);
 			});
-			
+
 			Event.observe('parte2_q3_b', 'change', function(evento){
 				validacaoRespostaNumerica('parte2_q3_b',2);
 				setResp('atividade1_parte2_q3_b',$('parte2_q3_b').value);
@@ -106,14 +106,14 @@ function init_load()
 			Event.observe('parte2_q3_c_1', 'change', function(evento){
 				setResp('atividade1_parte2_q3_c',$('parte2_q3_c_1').value);
 			});
-			
+
 			Event.observe('parte2_q3_c_2', 'change', function(evento){
 				setResp('atividade1_parte2_q3_c',$('parte2_q3_c_2').value);
-				
+
 			});
 			Event.observe('parte2_q3_c_3', 'change', function(evento){
 				setResp('atividade1_parte2_q3_c',$('parte2_q3_c_3').value);
-				
+
 			});
 
 			Event.observe('jogadaIndividutalButton', 'click', function(evento){
@@ -127,7 +127,7 @@ function init_load()
 			Event.observe('zerarJogadasButton', 'click', function(evento){
 				ApagarJogadas();
 			});
-			break;		
+			break;
 		case 2:
 			//Carrega valores iniciais
 			$('parte3_q4_a').value = getResp('atividade1_parte3_q4_a');
@@ -140,7 +140,7 @@ function init_load()
 				validacaoRespostaNumerica('parte3_q4_a',2);
 				setResp('atividade1_parte3_q4_a',$('parte3_q4_a').value);
 			});
-			
+
 			Event.observe('parte3_q4_b', 'change', function(evento){
 				validacaoRespostaNumerica('parte3_q4_b',2);
 				setResp('atividade1_parte3_q4_b',$('parte3_q4_b').value);
@@ -149,14 +149,14 @@ function init_load()
 			Event.observe('parte3_q4_c_1', 'change', function(evento){
 				setResp('atividade1_parte3_q4_c',$('parte3_q4_c_1').value);
 			});
-			
+
 			Event.observe('parte3_q4_c_2', 'change', function(evento){
 				setResp('atividade1_parte3_q4_c',$('parte3_q4_c_2').value);
-				
+
 			});
 			Event.observe('parte3_q4_c_3', 'change', function(evento){
 				setResp('atividade1_parte3_q4_c',$('parte3_q4_c_3').value);
-				
+
 			});
 
 			Event.observe('jogadaIndividutalButton', 'click', function(evento){
@@ -170,13 +170,13 @@ function init_load()
 			Event.observe('zerarJogadasButton', 'click', function(evento){
 				ApagarJogadas();
 			});
-			break;		
+			break;
 
 			case 3:
-			break;		
+			break;
 
 		}
-			
+
 		/*
 		Veja que está sendo criada logo abaixo uma instância de "Blocao", uma classe de
 		bloco de notas que permite tabelas no conteúdo. Se não for usar tabelas no Software,
@@ -198,7 +198,7 @@ function init_load()
 		- true, se está correto;
 		- false, se está certo;
 		- null, se não deve ser aplicada nenhuma correção
-	
+
 	Estudem esse código pra ver cada caso.
 	A variável valor é sempre um Array com os valores dos inputs. Não é obrigatório
 	o seu uso, visto que cada input possui um ID. Mas pode ser usado por conveniencia.
@@ -207,232 +207,229 @@ function init_load()
 //Um input de texto cuja resposta correta é 'qwe'
 function corrige_q_1_a(valor)	{
 	ocorrencias=geraOcorrencias();
-	
+
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=10)) {
-	
-	
+
+
 		var ocorrenciasSorted=ocorrencias.slice();
 
 		ocorrenciasSorted.sort();
 
 		while (ocorrenciasSorted[0][0]<ocorrenciasSorted[ocorrenciasSorted.length-1][0]) {
-			ocorrenciasSorted.shift();	
+			ocorrenciasSorted.shift();
 		}
 
 		var ocorrenciasMax = new Array();
 		for (i=0;i<ocorrenciasSorted.length;i++) {
 			ocorrenciasMax.push(ocorrenciasSorted[i][1]);
 		}
-		
+
 		if ( (!(isNaN(valor[0]))) && (valor[0]!=null))
 			{
 				correto = ( (ocorrenciasMax.indexOf(Number(valor))>-1) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
 
 
-} 
+}
 
 function corrige_q_2_a(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null)) {
 		if ( (!(isNaN(valor[0]))) &&  (valor[0]!=null))
 			{
 				correto = ( (ocorrencias[0][0]==(Number(valor[0]))) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
-} 
+}
 
 function corrige_q_2_b(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=10)) {
-	
+
 		if ( (!(isNaN(valor[0]))) && (valor[0]!=null))
 			{
-			
+
 				proporcao = ocorrencias[0][0] / (ocorrencias[0][0] + ocorrencias[1][0] + ocorrencias[2][0] + ocorrencias[3][0] + ocorrencias[4][0] + ocorrencias[5][0]);
 				correto = ( (roundNumber(proporcao,2)==roundNumber(valor[0],2)) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
-		
-} 
+
+}
 function corrige_q_2_c(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=10)) {
 		if ( (!(isNaN(valor[0]))) && (valor[0]!=null))
 			{
 				correto = ( (ocorrencias[5][0]==(Number(valor[0]))) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
-} 
+}
 function corrige_q_2_d(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null)) {
 		if ( (!(isNaN(valor[0]))) && (valor[0]!=null))
 			{
 				proporcao = ocorrencias[5][0] / (ocorrencias[0][0] + ocorrencias[1][0] + ocorrencias[2][0] + ocorrencias[3][0] + ocorrencias[4][0] + ocorrencias[5][0]);
 				correto = ( (roundNumber(proporcao,2)==roundNumber(valor[0],2)) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
 
-} 
+}
 
 function corrige_q_2_e(valor)
 {
 	ocorrencias=geraOcorrencias();
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=10)) {
 		var Jogador1=ocorrencias[0][0]+ocorrencias[1][0]+ocorrencias[2][0]+ocorrencias[3][0];
 		var Jogador2=ocorrencias[4][0]+ocorrencias[5][0];
 		return [valor[0]?(Jogador1>Jogador2):null, valor[1]?(Jogador1<Jogador2):null, valor[2]?(Jogador1==Jogador2):null];
 	} else return[null,null,null];
-} 
+}
 
 function corrige_q_3_a(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=30)) {
 		if ( (!(isNaN(valor[0]))) && (valor[0]!=null))
 			{
 				proporcao = ocorrencias[0][0] / (ocorrencias[0][0] + ocorrencias[1][0] + ocorrencias[2][0] + ocorrencias[3][0] + ocorrencias[4][0] + ocorrencias[5][0]);
 				correto = ( (roundNumber(proporcao,2)==roundNumber(valor[0],2)) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
-} 
+}
 
 function corrige_q_3_b(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=30)) {
 		if ( (!(isNaN(valor[0]))) && (valor[0]!=null))
 			{
 				proporcao = ocorrencias[5][0] / (ocorrencias[0][0] + ocorrencias[1][0] + ocorrencias[2][0] + ocorrencias[3][0] + ocorrencias[4][0] + ocorrencias[5][0]);
 				correto = ( (roundNumber(proporcao,2)==roundNumber(valor[0],2)) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
-} 
+}
 
 function corrige_q_3_c(valor)
 {
 	ocorrencias=geraOcorrencias();
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=30)) {
 		var Jogador1=ocorrencias[0][0]+ocorrencias[1][0]+ocorrencias[2][0]+ocorrencias[3][0];
 		var Jogador2=ocorrencias[4][0]+ocorrencias[5][0];
 		return [valor[0]?(Jogador1>Jogador2):null, valor[1]?(Jogador1<Jogador2):null, valor[2]?(Jogador1==Jogador2):null];
 	} else return[null,null,null];
-} 
+}
 
 function corrige_q_4_a(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=100)) {
 		if ( (!(isNaN(valor[0]))) &&  (valor[0]!=null))
 			{
 				proporcao = ocorrencias[0][0] / (ocorrencias[0][0] + ocorrencias[1][0] + ocorrencias[2][0] + ocorrencias[3][0] + ocorrencias[4][0] + ocorrencias[5][0]);
 				correto = ( (roundNumber(proporcao,2)==roundNumber(valor[0],2)) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
-} 
+}
 
 function corrige_q_4_b(valor)
 {
 	ocorrencias=geraOcorrencias();
 	valor[0]=processaNumero(valor[0]);
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=100)) {
 		if ( (!(isNaN(valor[0]))) &&  (valor[0]!=null))
 			{
 				proporcao = ocorrencias[5][0] / (ocorrencias[0][0] + ocorrencias[1][0] + ocorrencias[2][0] + ocorrencias[3][0] + ocorrencias[4][0] + ocorrencias[5][0]);
 				correto = ( (roundNumber(proporcao,2)==roundNumber(valor[0],2)) ? true : false );
-			} 
+			}
 			else correto = false;
 		return [ correto ] ;
 	} else return [null];
 
-} 
+}
 
 function corrige_q_4_c(valor)
 {
 	ocorrencias=geraOcorrencias();
-	
+
 	if (!(ocorrencias==null) && (numero_jogadas(ocorrencias)>=100)) {
 		var Jogador1=ocorrencias[0][0]+ocorrencias[1][0]+ocorrencias[2][0]+ocorrencias[3][0];
 		var Jogador2=ocorrencias[4][0]+ocorrencias[5][0];
 		return [valor[0]?(Jogador1>Jogador2):null, valor[1]?(Jogador1<Jogador2):null, valor[2]?(Jogador1==Jogador2):null];
 	} else return[null,null,null];
-} 
+}
 
 
 function tudoCerto() {
-	
-	if (PosicaoAtual.Parte!=3) var ocorrencias=geraOcorrencias(); 
-	
-	
+
+	if (PosicaoAtual.Parte!=3) var ocorrencias=geraOcorrencias();
+
+
 	if (ocorrencias!=null) {
 		var Jogador1=ocorrencias[0][0]+ocorrencias[1][0]+ocorrencias[2][0]+ocorrencias[3][0];
 		var Jogador2=ocorrencias[4][0]+ocorrencias[5][0];
 		var TotalJogadas = ocorrencias[0][0]+ocorrencias[1][0]+ocorrencias[2][0]+ocorrencias[3][0]+ocorrencias[4][0]+ocorrencias[5][0];
 		switch (PosicaoAtual.Parte) {
-			case 0: 
+			case 0:
 //			BlocoNotas.novaNota('Parte '+(parte+1)+': Para '+TotalJogadas+' jogadas, o Jogador 1 ganhou '+Jogador1+' vezes, enquanto que o Jogador 2 ganhou '+Jogador2+' vezes');
 				break;
-			case 1: 
-			
+			case 1:
+
 			//BlocoNotas.novaNota('Parte '+(parte+1)+': Para '+TotalJogadas+' jogadas, o Jogador 1 ganhou '+Jogador1+' vezes, enquanto que o Jogador 2 ganhou '+Jogador2+' vezes');
 				break;
-			case 2: 
+			case 2:
 			setAtividade('atividade_1',3,true);
 			setAtividade('atividade_2',1,false);
 //			BlocoNotas.novaNota('Parte '+(parte+1)+': Para '+TotalJogadas+' jogadas, o Jogador 1 ganhou '+Jogador1+' vezes, enquanto que o Jogador 2 ganhou '+Jogador2+' vezes');
 
 				break;
-	
+
 		}
 	}
-}	
-
-
-
+}

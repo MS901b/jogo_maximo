@@ -1,6 +1,6 @@
 *
 {
-	font: 16px/19px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	font: 18px/21px "Fira Sans", sans-serif;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -34,7 +34,7 @@ sub, sup {font-size: 10px;}
 	text-indent:-9999px;
 	width:15px;
 	height:15px;
-	
+
 }
 
 .esperando .input_radio .radio { background-position: -30px 0 !important; }
@@ -52,7 +52,7 @@ sub, sup {font-size: 10px;}
 	width:20px;
 	height:20px;
 	margin-right: 10px;
-	
+
 }
 
 .check_checado { background-position: 0 0; }
@@ -61,14 +61,14 @@ sub, sup {font-size: 10px;}
 
 /* definições básicas */
 
-.ancora 
+.ancora
 {
 	list-style-type: none !important;
 	margin: 0 !important;
 	padding: 0 !important;
 	text-decoration: none !important;
 	border: none !important;
-}	
+}
 
 .botao {height:29px; font-size: 14px; margin-right:7px; padding-bottom: 2px; text-align:center; border: 2px outset #CCC;}
 .botao:active{border: 2px inset #CCC;}
@@ -112,7 +112,7 @@ sub, sup {font-size: 10px;}
 	height: auto;
 	margin-left: -20px;
 	width: 100%;
-	z-index: 1;	
+	z-index: 1;
 }
 
 #fichas
@@ -153,20 +153,20 @@ sub, sup {font-size: 10px;}
 
 .parte_feita a
 {
-	
+
 	background: url(../img_layout/parte_feita.gif) no-repeat;
 	z-index: 3;
 }
 
 .parte_quase_feita a
 {
-	
+
 	background: url(../img_layout/parte_quase_feita.gif) no-repeat;
 	z-index: 3;
 }
 
 
-.parte_atual 
+.parte_atual
 {
 	font-size: 18px;
 	width: 31px;
@@ -313,9 +313,9 @@ sub, sup {font-size: 10px;}
 {	background: url(../img_layout/calculadora-on.gif);}
 
 #link_acessibilidade
-{	background: url(../img_layout/acessibilidade-off.gif);}
-#link_acessibilidade:hover
 {	background: url(../img_layout/acessibilidade-on.gif);}
+#link_acessibilidade:hover
+{	background: url(../img_layout/acessibilidade-off.gif);}
 
 .link_curiosidade{background: url(../img_layout/curiosidadesinha.gif) right center no-repeat; padding-right: 18px; text-decoration: none !important; border-bottom: 1px solid #2E47B2; color: #2E47B2;}
 
@@ -400,7 +400,7 @@ sub, sup {font-size: 10px;}
 	width: 240px;
 	text-align: right;
 	margin-top: 5px;
-	
+
 }
 
 #links a
@@ -465,7 +465,7 @@ sub, sup {font-size: 10px;}
 }
 
 .msg_valor_inicial * {color: black !important; font-style: italic;}
-.msg_valor_inicial  {margin: -2px -18px 10px -10px; border-bottom: 2px dotted #FFF; padding:0 0 5px 40px; height: 20px; position: relative; z-index:1; }
+.msg_valor_inicial  {margin: -2px -18px 10px -10px; border-bottom: 2px dotted #FFF; padding:0 0 5px 40px; height: 20px; }
 .msg_valor_inicial .depois {color: #a5a5a5 !important;}
 
 
@@ -573,7 +573,6 @@ sub, sup {font-size: 10px;}
 
 #questoes .questao .colchao{margin: 10px 20px 10px 10px;}
 
-#questoes .questao .questao_item_hack{border: 2px solid white; margin: -2px 0 0px -2px; width: 380px; position: relative; clear: both; cursor: pointer;}
 #questoes .questao .questao_item{border: 2px solid white; margin: -2px 0 0px -2px; width: 380px; position: relative; clear: both; cursor: pointer;}
 #questoes .questao .questao_item:hover{border: 2px dashed black; z-index: 10;}
 #questoes .questao .questao_item.selecionada:hover{border: 2px solid black !important;}
@@ -728,7 +727,7 @@ p .formula
 
 #questoes .questao .selecionada .ajuda:hover, #questoes .questao .selecionada .ajuda.ativo
 {
-	background-position: bottom center; 
+	background-position: bottom center;
 }
 
 
@@ -878,7 +877,7 @@ p .formula
 	width: 245px;
 	height: 261px;
 	background: url(../img_layout/calc.gif) no-repeat;
-	position: fixed; 
+	position: fixed;
 	bottom: 58px;
 	left: 39px;
 	z-index: 1201;
@@ -903,7 +902,7 @@ p .formula
 
 #link_continuar.ativado
 {
-	background: url(../img_layout/continuar-amarelo-ativado.gif) no-repeat;	
+	background: url(../img_layout/continuar-amarelo-ativado.gif) no-repeat;
 }
 
 #rodape
@@ -956,17 +955,11 @@ p .formula
 
 .select{border: 1px solid black; height: 20px; float: left}
 .select span{display: block; height: 20px; padding: 0 2px; line-height: 20px;}
-.select .seta{float:none; margin:0; background: url(../img_layout/spin-down.gif) center center no-repeat; width: 20px; height: 20px; display:block; border-left: 1px solid black; top:-20px; position: relative;}
-.opcoes{position: absolute; border: 1px solid black; background-color: white;}
-.opcoes span{display: block; cursor: pointer;}
-.opcoes span.selecionado{background-color: black; color: white;}
+.select span.selecionado{background-color: black; color: white;}
+.select .seta{background: url(../img_layout/spin-down.gif) center center no-repeat; width: 20px; height: 20px; display:block; border-left: 1px solid black; top:-20px; position: relative;}
+.select .opcoes{position: absolute; border: 1px solid black; background-color: white;}
+.select .opcoes span{display: block; cursor: pointer;}
 .select.desabilitado, .select.desabilitado * {background-color: #DDD;}
-
-#questoes .questao .incorreto .select {background:#FFB47F url(../img_layout/erradinho.gif) no-repeat scroll;}
-#questoes .questao .correto .select{background: #beff73 url(../img_layout/certinho.gif) no-repeat;}
-#questoes .questao .incorreto .select.especial {background:none;}
-#questoes .questao .correto .select.especial {background:none;}
-
 
 
 /* Classes auxiliares*/

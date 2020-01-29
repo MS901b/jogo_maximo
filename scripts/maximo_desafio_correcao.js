@@ -1,4 +1,4 @@
-var flag_flash = false;
+var flag_flash = true;
 var flag_doc = false;
 
 Event.observe(document, 'flash:SalvaLocal', function(ev){
@@ -21,8 +21,8 @@ function init_load()
 
 		switch (PosicaoAtual.Parte) {
 		case 0:
-		
-			
+
+
 			Event.observe('jogadaIndividutalButton', 'click', function(evento){
 				pausaFazJogadas(1,1,true);
 			});
@@ -34,13 +34,13 @@ function init_load()
 			Event.observe('zerarJogadasButton', 'click', function(evento){
 				ApagarJogadas();
 			});
-		
-		
+
+
 			break;
 
 		}
 	}
-		
+
 	/*
 	Veja que está sendo criada logo abaixo uma instância de "Blocao", uma classe de
 	bloco de notas que permite tabelas no conteúdo. Se não for usar tabelas no Software,
@@ -58,7 +58,7 @@ function init_load()
 		- true, se está correto;
 		- false, se está certo;
 		- null, se não deve ser aplicada nenhuma correção
-	
+
 	Estudem esse código pra ver cada caso.
 	A variável valor é sempre um Array com os valores dos inputs. Não é obrigatório
 	o seu uso, visto que cada input possui um ID. Mas pode ser usado por conveniencia.
@@ -68,4 +68,3 @@ function init_load()
 function questoesCertas(parte) {
 
 }
-

@@ -2,14 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
 		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
-		
-		<meta name=viewport content="width=device-width,initial-scale=1">  
-        <script src="https://www.geogebra.org/apps/deployggb.js"></script> 
-		
+
+		<meta name=viewport content="width=device-width,initial-scale=1">
+        <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
@@ -17,49 +17,50 @@
 		<!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>	
+		<!--[if lte IE 6]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
-		
+
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/notas.js"></script>
 		<script type="text/javascript" src="scripts/bloco.js"></script>
 		<script type="text/javascript" src="scripts/funcoes_estilizadas.js"></script>
 		<script type="text/javascript" src="scripts/calculadora.js"></script>
 		<script type="text/javascript" src="scripts/rolagem.js"></script>
-		
-		
+
+
 		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
 		<script type="text/javascript" src="scripts/interface.js"></script>
 		<script type="text/javascript" src="scripts/referencias.js"></script>
 		<script type="text/javascript" src="scripts/curiosidades.js"></script>
-		
+
 		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
 		<!-- O arquivo inputs.js deve ser incluído por último -->
 		<script type="text/javascript" src="scripts/maximo_desafio_correcao.js"></script>
 		<script type="text/javascript" src="scripts/maximo_desafio_conteudo.js"></script>
 		<script type="text/javascript" src="scripts/maximo_funcoes.js"></script>
-		<script type="text/javascript" src="scripts/inputs.js"></script>		
+		<script type="text/javascript" src="scripts/inputs.js"></script>
 		<script type="text/javascript">
 
 			var nomeSoft="Maximo";
 			var PosicaoAtual = {Atividade: 3, Parte: 0};
 			var ProximaParte = 'mapa.html';
-			
+
 			/*
-				
+
 				Popups, Links e Perguntas:
-				
+
 				Sempre devem ser usados em links <a> com um ID definido ("link_continuar" ou "paus", nesse exemplo, ou ainda "pede" e "pede2");
 				Veja que não é necessário criar o parâmetro href, nem onclick, ou onmouseover, nada!
 				Ambos criam um popup que abre com click, porem os listados em Link são tratados pondo cor azul e sublinhado tracejado automaticamente;
 				Para itens que não precisam de sublinhar (como img_layout, por exemplo) é melhor usar a lista Popup;
 				Para itens que precisam de uma interação com o usuário, use as Perguntas;
-				
+
 			*/
-				
+
 			var Popups = $H({
 				link_continuar: {
 					conteudo: 'Para prosseguir, você deve responder corretamente todas as repostas.',
@@ -67,14 +68,14 @@
 					largura: 11
 				}
 			});
-				
+
 			var Links = $H({
 			});
-				
+
 			var Perguntas = $H({
-            });		
+            });
 			</script>
-		
+
 
 		<style type="text/css">
 		<!--
@@ -94,8 +95,8 @@
 		}
 		-->
 		</style>
-		
-		
+
+
 		<title>Jogo do Máximo</title>
 	</head>
 	<body onunload="">
@@ -114,23 +115,17 @@
 					<a href="introducao.html">Introdução</a>
 					<a href="index.html">Início</a>
 				</div>
-				
+
 				<div class="limpador"></div>
 			</div>
 			<!-- Por enquanto o controle de partes trancadas não será implementado-->
 			<ul id="partes">
 			</ul>
-			
+
 			<div id="software">
 				<div id="conteudo">
-					<!-- SalvaLocal -->
-					<div class="salva_local">
-						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
-						<param name="menu" value="false" />
-						<param name="movie" value="applets/SalvaLocal.swf" />
-						</object>
-					</div>					
 				
+
 					<div class="texto_solto">
 					<p>Conforme você observou nos exercícios da Atividade 2, o Jogo do Máximo beneficia o jogador que tem as faces 5 e 6 a seu favor. De qualquer modo, é importante ter em mente que, em todas as simulações realizadas até agora, considerava-se que as faces dos dados eram equiprováveis, ou seja, elas tinham a mesma probabilidade de ocorrência. Mas o que aconteceria se elas tivessem probabilidades diferentes de aparecer?</p>
 					<p>A ferramenta ao lado é semelhante à da primeira atividade, com a diferença de que, aqui, você pode atribuir probabilidades diferentes para cada face, ou seja, pode-se "viciar" o dado da forma que se queira.</p>
@@ -141,7 +136,7 @@
 						<p>Na parte superior da ferramenta, pode-se alterar o peso de cada uma das faces, atribuindo valores de 1 a 10. Quanto maior for o peso atribuído, maior será a probabilidade daquela face aparecer.</p>
 						<p>O restante da ferramenta funciona da mesma maneira que na Atividade 1.</p>
 					</div>
-					
+
 					<div class="texto_solto">
 						<p>Para se familiarizar com essa nova ferramenta, atribua os pesos abaixo listados a cada uma das faces:</p>
 						Face 1: peso 1<br class="limpador">
@@ -153,7 +148,7 @@
 						<br class="limpador">
 						<p>Depois de ter alterado a probabilidade de ocorrência da face 4, você acha que o jogo se tornou justo? Use o simulador para avaliar esse novo cenário e depois tente responder ao desafio abaixo.</p>
 					</div>
-					
+
 					<div id="questoes">
 						<div id="texto_generico">
 						</div>
@@ -164,7 +159,7 @@
 									<h3>Questão 1</h3>
 										<ol>
 											<li><li>
-											<p>Tente viciar o dado de tal modo que o jogo se torne justo.</p>										
+											<p>Tente viciar o dado de tal modo que o jogo se torne justo.</p>
 											<li class="ultima" >
 												<span class="icone_questao">A</span>
 												<p>Você conseguiria demonstrar que, com esses novos pesos, o jogo se tornou realmente justo?</p>
@@ -173,7 +168,7 @@
 								</li>
 							</ol>
 						</div>
-						
+
 						<a id="link_continuar">
 							<span class="escondido">Continuar</span>
 						</a>
@@ -191,15 +186,15 @@
 				<!--
 					De acordo com a W3C as tags <applet> e <embed> estão depreciadas e não devem ser utilizadas em arquivos XHTML
 					e, no lugar, deve ser usada a tag <object>
-					
+
 					No caso do flash, funcionando em todos os browsers:
-					
+
 						<object id="Urna" name="Urna" type="application/x-shockwave-flash" data="applets/SemReposicao.swf" width="520" height="400">
 							<param name="menu" value="false" />
 							<param name="movie" value="applets/SemReposicao.swf" />
 						</object>
-					
-					No caso do Java, não dá pra pôr aqui comentado em HTML pois usa comentário condicional, 
+
+					No caso do Java, não dá pra pôr aqui comentado em HTML pois usa comentário condicional,
 					mas está no arquivo java_applet.html
 				-->
 				<div class="canto sup_esq"></div>
@@ -220,13 +215,13 @@
 							<td style="text-align:center;border: none"><div style="position:relative;top:6px;left:5px;width:72px; height:30px;border:none"><input type="spinner" min="0" max="10" value="1" id="spinner2"/></div></td>
 							<td style="text-align:center;border: none"><div style="position:relative;top:6px;left:5px;width:72px; height:30px;border:none"><input type="spinner" min="0" max="10" value="1" id="spinner3"/></div></td>
 							<td style="text-align:center;border: none"><div style="position:relative;top:6px;left:5px;width:72px; height:30px;border:none"><input type="spinner" min="0" max="10" value="1" id="spinner4"/></div></td>
-							<td style="text-align:center;border: none"><div style="position:relative;top:6px;left:5px;width:72px; height:30px;border:none"><input type="spinner" min="0" max="10" value="1" id="spinner5"/></div></td>						
-							<td style="text-align:center;border: none"><div style="position:relative;top:6px;left:5px;width:72px; height:30px;border:none"><input type="spinner" min="0" max="10" value="1" id="spinner6"/></div></td>						
-							
-						</tr>              
+							<td style="text-align:center;border: none"><div style="position:relative;top:6px;left:5px;width:72px; height:30px;border:none"><input type="spinner" min="0" max="10" value="1" id="spinner5"/></div></td>
+							<td style="text-align:center;border: none"><div style="position:relative;top:6px;left:5px;width:72px; height:30px;border:none"><input type="spinner" min="0" max="10" value="1" id="spinner6"/></div></td>
+
+						</tr>
 					</table>
 			<div style="float:left; position:relative; top:10px;">
-				<div id="listaJogadas" style="overflow:scroll; height: 285px; width=282px"> 
+				<div id="listaJogadas" style="overflow:scroll; height: 285px; width=282px">
 					<table border="0">
 						<tr>
 							<td valign="top">
@@ -243,20 +238,20 @@
 									</TBODY>
 								</table>
 							</td>
-							
+
 						</tr>
 					</table>
 				</div>
 				<p>
 				<div style="position:relative; top:10px;"><strong>Total Jogadas:</strong> <span id="nTotalJogadas"><strong>0</strong></span></div>
-				
+
 			</div>
-			
+
 			<div style="float:right;  position:relative; top:10px;"">
-				<div id="ggbApplet"></div> 
-                <script>  
-                    var ggbApp = new GGBApplet({"appName": "classic", 
-                    "width": 230, "height": 380, 
+				<div id="ggbApplet"></div>
+                <script>
+                    var ggbApp = new GGBApplet({"appName": "classic",
+                    "width": 230, "height": 380,
                     "filename": "applets/3dados_menor.ggb",
                     "showResetIcon": false,
                     "enableRightClick": false,
@@ -265,13 +260,13 @@
                     "showToolBarHelp": false,
                     "showAlgebraInput": false,
                     "enableShiftDragZoom": false,
-                    "useBrowserForJS": true                
+                    "useBrowserForJS": true
                     }, true);
-                    window.addEventListener("load", function() { 
+                    window.addEventListener("load", function() {
                     ggbApp.inject('ggbApplet');
                     });
                 </script>
-			</div>			
+			</div>
 
 			<div id="associacao"></div>
 			</div>
@@ -282,7 +277,7 @@
 			</div>
 		</div>
 
-		
+
 		<div id="associado"></div>
 		<div id="ferramentas">
 			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>

@@ -10,6 +10,7 @@
 			<coluna>1</coluna>
 			<altura>1</altura>
 		</posicao>
+		<estadoinicial>1</estadoinicial>
 	</item>
 
 	<item>
@@ -25,6 +26,7 @@
 		<ligacoes>
 			<com>a1</com>
 		</ligacoes>
+		<estadoinicial>1</estadoinicial>
 	</item>
 
 	<item><id>d1</id>
@@ -38,6 +40,7 @@
 		<ligacoes>
 			<com>a2</com>
 		</ligacoes>
+		<estadoinicial>1</estadoinicial>
 	</item>
 
 </software>

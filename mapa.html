@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,9 +11,11 @@
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
 		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
-		<script type="text/javascript" src="scripts/funcoes_estilizadas.js"></script>
+		<script type="text/javascript" src="scripts/mapinha.js"></script>
+
 		<title>Explorando o Jogo do Máximo</title>
 		<script type="text/javascript">
+			var nomeSoft = 'maximo';
 			var Perguntas = $H({
 				limpar: {
 					conteudo: '<p>Isso irá apagar todos os dados armazenados, como respostas guardadas, para essa unidade.</p><p style="margin-top:10px;">Você tem certeza?</p>',
@@ -24,7 +27,15 @@
 					respostas: [{sim: 'Sim'}, {nao: 'Não'}]
 				}
 			});
+
+			function resetar() {
+				if (this.resultado == 'sim') {
+					$('Mapinha').ApagaTudo('maximo');
+					location.reload();
+				}
+			}
 		</script>
+
 	</head>
 	<body>
 		<div id="container">
@@ -45,7 +56,7 @@
 			<div id="abertura">
 				<div id="conteudo">
 					<a id="limpar" style="position:absolute; right:20px; top: 20px; color:RGB(210,25,42); font-weight:bold; ">Limpar dados</a>
-					<!-- <embed height="480" id="Mapinha" align="middle" width="960" type="application/x-shockwave-flash" wmode="transparent" salign="" allowscriptaccess="sameDomain" allowfullscreen="false" menu="false" name="Mapinha" bgcolor="#ffffff" devicefont="false" wmode="window" scale="showall" loop="true" play="true" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="applets/Mapinha.swf"/> -->
+
 				</div>
 			</div>
 			<br class="limpador" />
@@ -55,14 +66,16 @@
 		</div>
 
 		<script>
-			fetch("scripts/estrutura.xml")
-				.then(function(response){
-				response.text().then(function(data){
-					const m = new Mapinha("conteudo","maximo");
-					m.parseXml(data);
-					m.adicionaBotoesItens();
-					});
-				})
+
+		fetch("scripts/estrutura.xml")
+			.then(function(response){
+			response.text().then(function(data){
+				const m = new Mapinha("conteudo", nomeSoft);
+				m.parseXml(data);
+				m.adicionaBotoesItens();
+				});
+			})
+
 			.catch(function(err){
 			console.error('Failed retrieving information', err);
 			});

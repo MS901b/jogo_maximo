@@ -1,9 +1,12 @@
+
 var SalvaLocal = new (Class.create({
     Salva: function(soft, key, value) {
       var item = localStorage.getItem(soft);
       software = item ? JSON.parse(item) : {};
       software[key] = value;
+
       localStorage.setItem(soft, JSON.stringify(software));  
+
     },
     Pega: function(soft, key) {
       item = localStorage.getItem(soft);
@@ -12,6 +15,7 @@ var SalvaLocal = new (Class.create({
     },
     Apaga: function (soft, key){
       var item = localStorage.getItem(soft);
+
   
       if(!item)
         return
@@ -19,14 +23,17 @@ var SalvaLocal = new (Class.create({
       software = item ? JSON.parse(item) : {};
       delete software[key];
       localStorage.setItem(soft, JSON.stringify(software));    
+
     },
     ApagaTudo: function (soft) {
       localStorage.removeItem(soft)
     }
   }))
+
   
   var hades = $;
   
+
   $ = function(...args) {
     if (args[0] === 'SalvaLocal' || args[0] === 'Mapinha') {
       return SalvaLocal;

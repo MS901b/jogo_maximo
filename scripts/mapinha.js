@@ -467,4 +467,3 @@ class Mapinha {
         this.l_panel.appendChild(card);
     }
 }
-

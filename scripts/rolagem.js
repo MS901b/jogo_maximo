@@ -9,7 +9,7 @@ else
 	Event.observe(window, 'load', function ()
 	{
 		new PeriodicalExecuter(rolagem, 0.05);
-		
+
 		// Shimmer para a barrinha de ferramentas
 		var shimmer = montaShimmer({
 			height: $('ferramentas').getHeight()+'px',
@@ -31,10 +31,10 @@ else
 			});
 		}.bind([shimmer, $('ferramentas')]), 0.5)
 	});
-	
+
 	function rolagem(){
 		var top = document.viewport.getScrollOffsets().top;
-		
+
 		if(!paraNavegacao)
 		{
 			if (top > 100)

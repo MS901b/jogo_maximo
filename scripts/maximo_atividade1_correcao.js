@@ -215,7 +215,7 @@ function corrige_q_1_a(valor)	{
 
 		var ocorrenciasSorted=ocorrencias.slice();
 
-		ocorrenciasSorted.sort();
+		ocorrenciasSorted.sort(function(a, b){return Number(a[0]) - Number(b[0])}); 
 
 		while (ocorrenciasSorted[0][0]<ocorrenciasSorted[ocorrenciasSorted.length-1][0]) {
 			ocorrenciasSorted.shift();

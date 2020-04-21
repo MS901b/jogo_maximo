@@ -37,6 +37,6 @@ var MeuBloco = new Array();
 
 
 Event.observe(window, 'load', function() {
-    BlocoNotas = new Blocao();
+    BlocoNotas = new Bloco();
 
 });

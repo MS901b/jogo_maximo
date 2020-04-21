@@ -6,8 +6,10 @@
 	Devem ser precedidas de uma barra '/'.
 	A palavra-chave subitem será usada somente em questões com mais de um campo
 */
- 
-var IdPadrao = [['parte/parte','q/questao','/itemletra','/subitem'],'_'];
+
+var IdPadrao = [
+    ['parte/parte', 'q/questao', '/itemletra', '/subitem'], '_'
+];
 
 /*
 	Questoes
@@ -21,11 +23,8 @@ var IdPadrao = [['parte/parte','q/questao','/itemletra','/subitem'],'_'];
 var Partes = ['1'];
 var nomeSoft = 'maximo';
 
-var Questoes = 
-[
-	{//Parte 1
-	}	
-]
+var Questoes = [{ //Parte 1
+}]
 
 /*
 	Bloco de Notas
@@ -38,6 +37,5 @@ var Questoes =
 */
 
 var MeuBloco = new Array(
-	'Jogo do Máximo'
+    'Jogo do Máximo'
 );
-

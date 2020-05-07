@@ -12,7 +12,7 @@ var IdPadrao = [
 ];
 
 var Partes = ['1'];
-var nomeSoft = 'Maximo';
+var nomeSoft = 'maximo';
 
 /*
 	Questoes

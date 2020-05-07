@@ -31,7 +31,7 @@ var Questoes = [{ //Parte 1
                 tipo: 'input',
                 corrigir: corrige_q_1_a,
                 enunciado: 'Qual foi o máximo que mais vezes apareceu?',
-                msgErro: 'Você pode obter essa informação a gráfico de cima. Caso haja haja mais de uma face aparecendo com a maior frequência, escolha apenas uma delas. <br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
+                msgErro: 'Você pode obter essa informação a gráfico de cima (“Frequência de Maior Face”). Caso haja mais de uma face aparecendo com a maior frequência, escolha apenas uma delas. <br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
             }]
         },
         parte1_q2: //Questão 2
@@ -41,7 +41,7 @@ var Questoes = [{ //Parte 1
                     tipo: 'input',
                     corrigir: corrige_q_2_a,
                     enunciado: 'Quantas vezes o número 1 foi o maior valor gerado pelo lançamento dos dados?',
-                    msgErro: 'Você pode obter essa informação no gráfico de cima.<br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
+                    msgErro: 'Você pode obter essa informação no gráfico de cima (“Frequência de Maior Face”).<br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
                 },
                 { //B
                     tipo: 'input',
@@ -53,7 +53,7 @@ var Questoes = [{ //Parte 1
                     tipo: 'input',
                     corrigir: corrige_q_2_c,
                     enunciado: 'Quantas vezes o número 6 foi o maior valor gerado pelo lançamento dos dados?',
-                    msgErro: 'Você pode obter essa informação no gráfico de cima.<br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
+                    msgErro: 'Você pode obter essa informação no gráfico de cima (“Frequência de Maior Face”).<br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
                 },
                 { //D
                     tipo: 'input',
@@ -70,7 +70,7 @@ var Questoes = [{ //Parte 1
                         { value: 'segundo_jogador', label: 'Segundo Jogador' },
                         { value: 'empate', label: 'Empate' }
                     ],
-                    msgErro: 'Você pode obter essa informação no gráfico de baixo. <br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
+                    msgErro: 'Você pode obter essa informação no gráfico de baixo (“Frequência do Vitorioso”). <br /> <br />Lembre-se de que é necessário realizar pelo menos 10 jogadas para responder a essa pergunta.'
                 }
             ]
         }
@@ -81,7 +81,7 @@ var Questoes = [{ //Parte 1
             itens: [{ //A	
                     tipo: 'input',
                     corrigir: corrige_q_3_a,
-                    enunciado: 'Em que proporção a face de número 1 foi o máximo?',
+                    enunciado: 'Em que proporção a face de número 1 foi o máximo? Arredonde para três casas decimais.',
                     msgErro: 'Proporção é o número de vezes que certo resultado acontece em relação ao total de simulações realizadas.<br /> </br /> Por exemplo, se, tendo sido realizadas 12 simulações, a face de número 4 tiver aparecido três vezes, então a proporção será 3 em 12, ou seja, 3/12 = ¼ = 0,25 ou 25%. <br /> </br /> Lembre-se de que é necessário realizar pelo menos 30 jogadas para responder a essa pergunta.'
                 },
                 { //B

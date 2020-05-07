@@ -15,10 +15,7 @@ Event.observe(window, 'load', function() {
 
 function init_load() {
     if ((flag_flash) && (flag_doc)) {
-        console.log("seta hex desafio");
-        //if (getResp('desafio_1')<2) setResp('desafio_1',2);
-        $('SalvaLocal').Salva(nomeSoft, 'desafio_1', '2');
-        console.log("setadp hex deafio ok =]");
+        if (getResp('desafio_1') < 2) setResp('desafio_1', 2);
 
         switch (PosicaoAtual.Parte) {
             case 0:
